@@ -32,7 +32,8 @@ submit.addEventListener('click', function(event) {
     .then(data => {
     
       window.location.href = "https://learnify-home.onrender.com";
-        window.alert('Login successful');
+      localStorage.setItem('isLoggedIn', 'true');
+      window.alert('Login successful');
       // Handle the response data here
     })
     .catch(error => {
