@@ -33,7 +33,7 @@ submit.addEventListener('click', function(event) {
     .then(data => {
       localStorage.setItem('isLoggedIn', 'true');
       console.log('value set')
-      window.location.href = "https://learnify-home.onrender.com";
+      window.location.href = "https://learnify-home.onrender.com?login=true";
       window.alert('Login successful');
       // Handle the response data here
     })
