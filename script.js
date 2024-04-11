@@ -37,4 +37,4 @@ fetch(url, options)
   });
 };
 
-submit.addEventListener('clcik', register);
+submit.addEventListener('click', register);
