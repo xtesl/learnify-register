@@ -19,6 +19,7 @@ const options = {
   body: JSON.stringify(data)
 };
 
+function register(){
 fetch(url, options)
   .then(response => {
     if (!response.ok) {
@@ -34,3 +35,6 @@ fetch(url, options)
     console.error('There was a problem with the POST request:', error);
     // Handle errors here
   });
+};
+
+submit.addEventListener('clcik', register);
