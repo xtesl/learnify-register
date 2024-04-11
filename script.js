@@ -21,7 +21,8 @@ submit.addEventListener('click', function(event) {
     },
     body: JSON.stringify(data)
   };
-
+ loginMessage.style.display = 'block';
+  submit.disabled = true;
   fetch(url, options)
     .then(response => {
       if (!response.ok) {
@@ -39,5 +40,9 @@ submit.addEventListener('click', function(event) {
     .catch(error => {
       console.error('There was a problem with the POST request:', error);
       // Handle errors here
+    }) .finally(() => {
+      // Hide the login message and enable the submit button
+      loginMessage.style.display = 'none';
+      submit.disabled = false;
     });
 });
