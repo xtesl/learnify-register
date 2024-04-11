@@ -5,8 +5,8 @@ const email = document.getElementById('email');
 const password = document.getElementById('password');
 const submit = document.getElementById('submit');
 
-console.log(email);
-console.log(password);
+console.log(email.value);
+console.log(password.value);
 
 const data = {
   email: email.value,
