@@ -19,7 +19,7 @@ const options = {
   body: JSON.stringify(data)
 };
 
-fetch('https://cors-anywhere.herokuapp.com/' + url, options)
+fetch(url, options)
   .then(response => {
     if (!response.ok) {
       throw new Error('Network response was not ok');
