@@ -31,11 +31,9 @@ submit.addEventListener('click', function(event) {
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
-      return response.json();
+      
     })
     .then(data => {
-      localStorage.setItem('isLoggedIn', 'true');
-      console.log('value set')
       window.location.href = "https://learnify-home.onrender.com?login=true";
       window.alert('Login successful');
       // Handle the response data here
