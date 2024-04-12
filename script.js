@@ -8,6 +8,9 @@ submit.addEventListener('click', function(event) {
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
 
+  console.log(email);
+  console.log(password);
+
   const data = {
     email: email,
     password: password
