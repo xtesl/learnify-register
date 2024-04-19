@@ -1,3 +1,55 @@
+
+var current = null;
+document.querySelector('#email').addEventListener('focus', function(e) {
+  if (current) current.pause();
+  current = anime({
+    targets: 'path',
+    strokeDashoffset: {
+      value: 0,
+      duration: 700,
+      easing: 'easeOutQuart'
+    },
+    strokeDasharray: {
+      value: '240 1386',
+      duration: 700,
+      easing: 'easeOutQuart'
+    }
+  });
+});
+document.querySelector('#password').addEventListener('focus', function(e) {
+  if (current) current.pause();
+  current = anime({
+    targets: 'path',
+    strokeDashoffset: {
+      value: -336,
+      duration: 700,
+      easing: 'easeOutQuart'
+    },
+    strokeDasharray: {
+      value: '240 1386',
+      duration: 700,
+      easing: 'easeOutQuart'
+    }
+  });
+});
+document.querySelector('#submit').addEventListener('focus', function(e) {
+  if (current) current.pause();
+  current = anime({
+    targets: 'path',
+    strokeDashoffset: {
+      value: -730,
+      duration: 700,
+      easing: 'easeOutQuart'
+    },
+    strokeDasharray: {
+      value: '530 1386',
+      duration: 700,
+      easing: 'easeOutQuart'
+    }
+  });
+});
+
+
 const url = 'https://learnify-api-kps0.onrender.com/api/v1/auth/login/'; // Replace with your API endpoint
 
 const submit = document.getElementById('submit');
@@ -8,12 +60,9 @@ submit.addEventListener('click', function(event) {
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
 
-  console.log(email);
-  console.log(password);
-
   const data = {
-    email: email,
-    password: password
+    email: email.trim(),
+    password: password.trim()
   };
 
   const options = {
@@ -47,3 +96,5 @@ submit.addEventListener('click', function(event) {
       submit.disabled = false;
     });
 });
+
+
