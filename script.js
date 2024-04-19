@@ -73,26 +73,28 @@ submit.addEventListener('click', function(event) {
     },
     body: JSON.stringify(data)
   };
- loginMessage.style.display = 'block';
-  submit.disabled = true;
+  document.querySelector('.spinner-overlay').style.display = 'flex';
+ submit.disabled = true;
   fetch(url, options)
     .then(response => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
+        document.querySelector('.spinner-overlay').style.display = 'none';
       }
       
     })
     .then(data => {
+      document.querySelector('.spinner-overlay').style.display = 'none';
       window.location.href = "https://learnify-home.onrender.com?login=true";
       window.alert('Login successful');
       // Handle the response data here
     })
     .catch(error => {
-      console.error('There was a problem with the POST request:', error);
+
       // Handle errors here
     }) .finally(() => {
       // Hide the login message and enable the submit button
-      loginMessage.style.display = 'none';
+      document.querySelector('.spinner-overlay').style.display = 'none';
       submit.disabled = false;
     });
 });
